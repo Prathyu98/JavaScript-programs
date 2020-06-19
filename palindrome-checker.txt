@@ -1,0 +1,21 @@
+function palindrome(str) {
+
+ //to remove all the special symbols
+ var remove =/[^A-Za-z0-9]/g;
+
+ //converting it to upper case and removing all special symbols including spaces
+ str = str.toUpperCase()
+          .replace(remove,'');
+
+// first we splited the string and revered later we join it
+ var reversed = str.split('')
+                   .reverse( )
+                   .join(''); 
+//checks whether the given string and reversed string are equal or not
+  if( str === reversed)
+      return true;    
+//if not it returns false      
+  else 
+     return false;    
+}
+palindrome("eye");
