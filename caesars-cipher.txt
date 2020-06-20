@@ -1,0 +1,33 @@
+function rot13(str) {
+   
+var str=str.split("");
+ 
+var word1=[], word2=[],n;
+
+n=str.length;
+for (var index=0; index<n; index++)
+{    
+   var item=str[index];
+   var ascii_value=item.charCodeAt(); //getting the ascii value
+
+   if (item.match(/[A-Z]/)) //if its between A-Z 
+    {   
+      if ( ascii_value >=65 && ascii_value <=77 ) 
+         ascii_value += 13;
+      else
+         ascii_value -= 13;
+     word1.push(ascii_value); //we decrypt it and push it to word1 
+    }
+   else
+      word1.push(item.charCodeAt()); 
+} 
+for ( index=0; index<word1.length; index++)
+  {
+    var item2=word1[index];
+    word2.push(String.fromCharCode(item2)); //convert it to string formate
+  }
+ var test=word2.join(""); 
+return test;
+}
+
+rot13("SERR PBQR PNZC");
